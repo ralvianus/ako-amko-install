@@ -24,7 +24,7 @@ if [ -f /etc/lsb-release ]; then
 fi
 echo ====================================
 
-# Install AKO
+# Generating AKO Config
 echo Installing AKO using Helm..
 mkdir ako
 cd ako
@@ -42,4 +42,3 @@ echo Adding AKO Repository..
 helm repo add ako https://projects.registry.vmware.com/chartrepo/ako
 echo Generating values.yaml file..
 helm show values ako/ako --version $ako_version > ~/ako-amko-install/base-value/ako-values.yaml
-cp ~/ako-amko-install/base-value/ako-values.yaml ~/ako-amko-install/ako-values.yaml
