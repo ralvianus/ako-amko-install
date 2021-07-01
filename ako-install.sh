@@ -41,5 +41,5 @@ fi
 echo Adding AKO Repository..
 helm repo add ako https://projects.registry.vmware.com/chartrepo/ako
 echo Generating values.yaml file..
-helm show values ako/ako --version $ako_version > ~/ako-amko-install/value-base/ako-values.yaml
-cp ~/ako-amko-install/value-base/ako-values.yaml ~/ako-amko-install/ako-values.yaml
+helm show values ako/ako --version $ako_version > ~/ako-amko-install/base-value/ako-values.yaml
+cp ~/ako-amko-install/base-value/ako-values.yaml ~/ako-amko-install/ako-values.yaml
