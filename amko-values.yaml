@@ -29,8 +29,8 @@ configs:
   useCustomGlobalFqdn: false
 
 gslbLeaderCredentials:
-  username: ''
-  password: ''
+  username: 'admin'
+  password: 'VMware1!'
 
 globalDeploymentPolicy:
   # appSelector takes the form of:
