@@ -34,9 +34,9 @@ gslbLeaderCredentials:
 
 globalDeploymentPolicy:
   # appSelector takes the form of:
-  # appSelector:
-  #   label:
-  #     app: gslb   <example label key-value for an ingress/service type LB>
+  appSelector:
+   label:
+     app: avi-gslb
   # Uncomment below and add the required ingress/route/service label
   # appSelector:
 
