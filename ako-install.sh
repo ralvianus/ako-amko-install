@@ -26,9 +26,6 @@ echo ====================================
 
 # Generating AKO Config
 echo Installing AKO using Helm..
-mkdir ako
-cd ako
-echo Creating directory successful
 echo
 echo Creating avi-system namespace
 if ! kubectl get namespaces -o json | jq -r ".items[].metadata.name" | grep avi-system;then
