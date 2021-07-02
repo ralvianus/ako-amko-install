@@ -12,7 +12,7 @@ configs:
   gslbLeaderController: '192.168.110.87'
   controllerVersion: 20.1.5
   memberClusters:
-  - clusterContext: ocp-east
+  - clusterContext: ocp-east-admin
   refreshInterval: 1800
   logLevel: INFO
   # Set the below flag to true if a different GSLB Service fqdn is desired than the ingress/route's
@@ -49,7 +49,7 @@ globalDeploymentPolicy:
   # list of all clusters that the GDP object will be applied to, can take any/all values
   # from .configs.memberClusters
   matchClusters:
-  - cluster: ocp-east
+  - cluster: ocp-east-admin
 
   # list of all clusters and their traffic weights, if unspecified, default weights will be
   # given (optional). Uncomment below to add the required trafficSplit.

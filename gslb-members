@@ -8,7 +8,7 @@ contexts:
 - context:
     cluster: ocp-east
     user: ocp-admin
-  name: ocp-east
+  name: ocp-east-admin
 kind: Config
 preferences: {}
 users:
