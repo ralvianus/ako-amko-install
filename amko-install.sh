@@ -19,6 +19,3 @@ else
     echo gslb-members file is missing, please provide gslb-members file
     exit 0
 fi
-
-echo Adding AMKO Repository..
-helm repo add amko https://projects.registry.vmware.com/chartrepo/ako
