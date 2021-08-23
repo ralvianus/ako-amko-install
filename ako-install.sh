@@ -20,20 +20,25 @@ else
 fi
 
 # Download requirements
-if [ -f /etc/redhat-release ]; then
-  yum install jq -y
-fi
+if ! command -v jq &> /dev/null
+then
+  if [ -f /etc/redhat-release ]; then
+    yum install jq -y
+  fi
 
-if [ -f /etc/lsb-release ]; then
-  apt-get install jq -y
+  if [ -f /etc/lsb-release ]; then
+    apt-get install jq -y
+  fi
+  echo ====================================
+else
+  echo Requirements are met
 fi
-echo ====================================
 
 # Generating AKO Config
 echo Installing AKO using Helm..
 echo
-echo Creating avi-system namespace
 if ! kubectl get namespaces -o json | jq -r ".items[].metadata.name" | grep avi-system;then
+  echo Creating avi-system namespace
   kubectl create ns avi-system
   echo Creating namespace avi-system successful
 else
