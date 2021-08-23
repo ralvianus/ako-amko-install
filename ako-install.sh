@@ -4,15 +4,20 @@
 read -p 'AKO Version: ' ako_version
 
 # Install Prerequisite
-echo Installing Helm..
-mkdir ~/helm-install
-cd ~/helm-install
-curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-chmod 700 get_helm.sh
-./get_helm.sh -v v3.0.3
-echo
-helm version
-echo
+if ! command -v helm &> /dev/null
+then
+  echo Installing Helm..
+  mkdir ~/helm-install
+  cd ~/helm-install
+  curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+  chmod 700 get_helm.sh
+  ./get_helm.sh -v v3.0.3
+  echo
+  helm version
+  echo
+else
+  echo Helm is already exists
+fi
 
 # Download requirements
 if [ -f /etc/redhat-release ]; then
